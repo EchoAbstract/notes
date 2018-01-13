@@ -53,3 +53,6 @@ much of the rest of the article is about dealing with `webpack` and typescript.
 
 - Formatting: [typescript-formatter](https://github.com/vvakame/typescript-formatter)
 - Linter: [tslint](https://github.com/palantir/tslint)
+  - `tslint.json` from vscode:
+    https://github.com/Microsoft/vscode/blob/master/tslint.json
+  - [local copy](vscode-tslint.json)
