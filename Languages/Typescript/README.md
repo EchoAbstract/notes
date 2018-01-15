@@ -56,3 +56,43 @@ much of the rest of the article is about dealing with `webpack` and typescript.
   - `tslint.json` from vscode:
     https://github.com/Microsoft/vscode/blob/master/tslint.json
   - [local copy](vscode-tslint.json)
+
+
+### Editing
+
+## Emacs
+
+Use [TIDE](https://github.com/ananthakumaran/tide)!
+
+I'm pretty sure that I was lazy and didn't want this loaded by default, so I'd
+just search for TIDE, and run the following snippet in a `*scratch*` buffer:
+
+
+
+    (defun setup-tide-mode ()
+      (interactive)
+      (tide-setup)
+      (flycheck-mode +1)
+      (setq flycheck-check-syntax-automatically '(save mode-enabled))
+      (eldoc-mode +1)
+      (tide-hl-identifier-mode +1)
+      ;; company is an optional dependency. You have to
+      ;; install it separately via package-install
+      ;; `M-x package-install [ret] company`
+      (company-mode +1))
+
+    ;; aligns annotation to the right hand side
+    (setq company-tooltip-align-annotations t)
+
+    ;; formats the buffer before saving
+    (add-hook 'before-save-hook 'tide-format-before-save)
+
+    (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+
+I should fix that!
+
+
+## VSCode
+
+Working through this at the moment: https://github.com/Microsoft/TypeScript-Vue-Starter
