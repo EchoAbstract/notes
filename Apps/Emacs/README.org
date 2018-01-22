@@ -1,0 +1,17 @@
+#+TITLE: Notes on Emacs
+#+AUTHOR: Brian Wilson <polytopes@gmail.com>
+
+
+* Snippets
+
+** eshell configuration
+
+*** Clear buffer
+
+Typing clear in eshell will then result in clearing the buffer.
+
+#+BEGIN_SRC emacs-lisp
+;Clear the eshell buffer.
+(defun eshell/clear ()
+   (let ((eshell-buffer-maximum-lines 0)) (eshell-truncate-buffer)))
+#+END_SRC
